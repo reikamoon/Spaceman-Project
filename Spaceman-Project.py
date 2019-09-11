@@ -93,11 +93,17 @@ def spaceman(secret_word):
 
 
     #TODO: show the player information about the game according to the project spec
-
+    print("Welcome to Spaceman, make your first guess!")
+    print("The secret code contains: {} characters, make your first guess!".format(len(secret_word)))
+    print("You only have 7 guesses, use them wisely!")
+    guesses_used = 7
+    letters_guessed = []
+    while guesses_left > 0:
     #TODO: Ask the player to guess one letter per round and check that it is only one letter
-
+    print("You are allowed to guess one letter per round. Enter a letter.")
+    player_input = input()
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
-
+    if guessed_letter in 
     #TODO: show the guessed word so far
 
     #TODO: check if the game has been won or lost
