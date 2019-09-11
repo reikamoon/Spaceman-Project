@@ -90,7 +90,7 @@ def spaceman(secret_word):
     '''
 
     #TODO: show the player information about the game according to the project spec
-    print("Welcome to Spaceman, can you guess the Secret Code?")
+    print("Welcome to Spaceman, can you guess the secret code?")
     print("The secret code contains: {} characters, make your first guess!".format(len(secret_word)))
     print("You only have 7 guesses, use them wisely!")
     guesses_used = 7
@@ -143,4 +143,4 @@ while play_again:
 
 #These function calls that will start the game
 
-#Credits to Joanelly Cruz and Dahveyea Cowan for assisting me with code
+#Credits to Dahveyea Cowan for assisting me with code
