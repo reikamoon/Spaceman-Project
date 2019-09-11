@@ -48,8 +48,13 @@ def get_guessed_word(secret_word, letters_guessed):
     '''
 
     #TODO: Loop through the letters in secret word and build a string that shows the letters that have been guessed correctly so far that are saved in letters_guessed and underscores for the letters that have not been guessed yet
-
-    pass
+    correct_characters = ""
+    for characters in secret_word:
+        if characters in letters_guessed:
+            correct_characters += characters
+        else:
+            correct_characters += "_"
+    return correct_characters
 
 
 def is_guess_in_word(guess, secret_word):
@@ -66,8 +71,11 @@ def is_guess_in_word(guess, secret_word):
 
     '''
     #TODO: check if the letter guess is in the secret word
-
-    pass
+    for characters in secret_word:
+        if characters == correct_word:
+            return True
+        else:
+            return False
 
 
 
@@ -81,22 +89,58 @@ def spaceman(secret_word):
 
     '''
 
-
     #TODO: show the player information about the game according to the project spec
+    print("Welcome to Spaceman, can you guess the secret code?")
+    print("The secret code contains: {} characters, make your first guess!".format(len(secret_word)))
+    print("You only have 7 guesses, use them wisely!")
+    guesses_used = 7
+    letters_guessed = []
 
+    while guesses_used > 0:
+        player_input = input("Enter a letter:")
     #TODO: Ask the player to guess one letter per round and check that it is only one letter
-
+        if len(player_input) > 1:
+            print("Sorry, enter one character.")
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
+
+        if is_guess_in_word(player_input,secret_word):
+                print("Correct!")
+                letters_guessed.append(player_input)
+
+                if is_word_guessed(secret_word,letters_guessed):
+                    print("Aha! You've guessed the code correctly!")
+                    break
+
+
+        else:
+            print("Sorry, wrong answer. Try again!")
+            guesses_used -=1
+        print(get_guessed_word(secret_word, letters_guessed))
+        print("guesses left, " + str(guesses_used))
+
+    else:
+        print("Game over. Try again soon!")
+        print("The secret code is " +secret_word)
+
 
     #TODO: show the guessed word so far
 
     #TODO: check if the game has been won or lost
+play_again = True
+while play_again:
+        secret_word = load_word()
+        spaceman(secret_word)
 
+        play_again = input("Would you like to start a new game?").lower()
+        if play_again == "yes":
+            play_again = True
+        else:
+            play_again = False
 
 
 
 
 
 #These function calls that will start the game
-secret_word = load_word()
-spaceman(load_word())
+
+#Credits to Joanelly Cruz and Dahveyea Cowan for assisting me with code
