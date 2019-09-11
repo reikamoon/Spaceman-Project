@@ -143,4 +143,4 @@ while play_again:
 
 #These function calls that will start the game
 
-#Credits to Joanelly Cruz and Dahveyea Cowan for assisting me with code
+#Credits to Dahveyea Cowan for assisting me with code
