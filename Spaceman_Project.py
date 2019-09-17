@@ -29,11 +29,12 @@ def is_word_guessed(secret_word, letters_guessed):
         bool: True only if all the letters of secret_word are in letters_guessed, False otherwise
     '''
     # TODO: Loop through the letters in the secret_word and check if a letter is not in lettersGuessed
-    if letters_guessed == secret_word:
-        secret_word = True
-    else:
-        secret_word = False
-    pass
+    for letter in secret_word:
+        if letter not in letters_guessed:
+            return False
+
+
+    return True
 
 def get_guessed_word(secret_word, letters_guessed):
     '''
@@ -126,7 +127,7 @@ def spaceman(secret_word):
     #TODO: show the guessed word so far
 
     #TODO: check if the game has been won or lost
-play_again = True
+'''play_again = True
 while play_again:
         secret_word = load_word()
         spaceman(secret_word)
@@ -135,8 +136,8 @@ while play_again:
         if play_again == "yes":
             play_again = True
         else:
-            play_again = False
-
+            play_again = False'''
+#Had to comment the play_again function to use the test_spaceman file
 
 
 
